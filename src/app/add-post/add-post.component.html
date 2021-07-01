@@ -1,0 +1,21 @@
+<h2 mat-dialog-title>Create Post</h2>
+<mat-dialog-content class="mat-typography">
+    <div class="example-container">
+        <div>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Title</mat-label>
+                <input matInput placeholder="Title" [formControl]="title" required>
+            </mat-form-field>
+        </div>
+        <div>
+            <mat-form-field class="field" appearance="fill">
+                <mat-label>Body</mat-label>
+                <textarea matInput placeholder="Body" [formControl]="body" required></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+</mat-dialog-content>
+<mat-dialog-actions align='end'>
+  <button mat-stroked-button color="primary" mat-dialog-close>Cancel</button>
+  <button mat-stroked-button color="primary" [disabled]="checkIfDisabled()" [mat-dialog-close]="{title: title.value, body: body.value}" cdkFocusInitial>Add Post</button>
+</mat-dialog-actions>

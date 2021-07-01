@@ -1,0 +1,17 @@
+<div>
+  <div>
+    <h1>Available Posts for
+      <span class="userName">{{userName}}</span>
+    </h1>
+  </div>
+  <ul *ngFor="let post of posts">
+    <li>
+      <h4>{{post.title}}</h4>
+      <div>{{post.body}}</div>
+    </li>
+  </ul>
+  <div class="buttons">
+    <button mat-stroked-button color="primary" (click)="goBack()">Back</button>
+    <button mat-stroked-button color="primary" (click)="openDialog()">Create Post</button>
+  </div>
+</div>
